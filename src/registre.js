@@ -6,6 +6,7 @@ import { versNombre } from './outils.js';
 export const TEXTURES = ['sableux', 'limoneux', 'argileux'];
 export const HUMIDITES = ['sec', 'intermédiaire', 'humide'];
 
+
 // Renvoie une ligne de texte qui décrit l'observation.
 // Exemple : 'S01 | P1 | sableux | pH 5.2 | sec'
 export function formaterObservation(observation) {
