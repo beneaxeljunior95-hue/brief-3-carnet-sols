@@ -10,6 +10,31 @@ import { SEUIL_PH_A_DISCUTER, compterParTexture, phMinMax, pointsADiscuter } fro
 
 const FICHIER_DONNEES = 'donnees/observations.json';
 
+// ------------Affichages----------------
+function afficherAcceuil () {
+  console.log ("============================================");
+  console.log ("     Ferme pédagogique    ");
+  console.log ("============================================");
+  }
+
+  function afficherMenu() {
+    console.log("");
+    console.log ("-----------------MENU-------------------");
+    console.log ("1. Ajouter une observation");
+    console.log ("2. Lister les observation");
+    console.log ("3. Rechercher (point, parcelle, texture)");
+    console.log ("4. Trier par pH ")
+    console.log ("5. Synthèse des observations");
+    console.log ("0. Quitter");
+  }
+
+
+
+
+
+
+
+
 async function main() {
   ouvrirSaisie();
   console.log("À compléter : écrivez le menu dans app.js (fiches/3-ajouter-lister.md).");
@@ -17,3 +42,4 @@ async function main() {
 }
 
 main();
+
