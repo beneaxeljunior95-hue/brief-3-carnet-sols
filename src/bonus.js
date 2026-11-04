@@ -63,5 +63,18 @@ export function trierParPhDecroissant(observations) {
 // En cas d'égalité, la première texture rencontrée l'emporte.
 // Exemple : { texture: 'limoneux', nombre: 4 }
 export function textureLaPlusFrequente(observations) {
-  throw new Error('TODO Bonus : coder textureLaPlusFrequente dans src/bonus.js');
-}
+   if (observations.length === 0)
+    return null;
+  const compt = new Map();
+  for ( const observation of observations){
+    compt.set(observation.texture,(compt.get(observation.texture) || 0)+1);
+  }
+  let meilleur = null;
+  for (const [texture,nombre] of compt){
+    if (meilleur === null || nombre > meilleur.nombre){
+      meilleur = {texture,nombre};
+    }
+  }
+  return meilleur;
+  }
+
