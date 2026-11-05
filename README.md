@@ -34,8 +34,8 @@ Sous PowerShell, si `npm` est bloqué : `npm.cmd test`.
 - [X] Rechercher par point ou par parcelle ; filtrer par texture
 - [X] Trier par pH
 - [X] Synthèse : pH minimum et maximum, nombre par texture, points à discuter (pH < 5,5)
-- [ ] Bonus : supprimer et modifier une observation (choix 6 et 7)
-- [ ] Bonus : tri par pH décroissant, texture la plus fréquente
+- [X] Bonus : supprimer et modifier une observation (choix 6 et 7)
+- [X] Bonus : tri par pH décroissant, texture la plus fréquente
 
 ## Données
 
