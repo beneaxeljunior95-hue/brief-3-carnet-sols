@@ -17,6 +17,7 @@ const FICHIER_DONNEES = 'donnees/observations.json';
 function afficherAccueil () {
   console.log ("============================================");
   console.log ("     Ferme pédagogique    ");
+  console.log ("     Carnet d’observation des sols    ");
   console.log ("============================================");
   }
 
@@ -163,28 +164,27 @@ const textureFrequent = textureLaPlusFrequente(observations);
 if (textureFrequent === null) {
   console.log('Texture la plus fréquente : aucune observation');
 } else {
-  console.log (`Texture la plus fréquente ${textureFrequent.texture} (${textureFrequent.nombre} observations(s))`
-  );
+  console.log (`Texture la plus fréquente ${textureFrequent.texture} (${textureFrequent.nombre} observations(s))`);
 }
   console.log('Rappels : le pH est sans unité. Aucune moyenne de pH n\'est calculée (échelle logarithmique).');
   console.log('Ces points ne sont pas un diagnostic de fertilisation : ils servent à préparer l\'échange avec le coach.');
 }
 // choix 6
-async function supprimer(observation) {
+async function supprimer(observations) {
 console.log('----supprimer une observation---- ');
 
 const saisie = await demander ('Identifiant du point à supprimer : ');
 if (saisie === null) return;
 
-const id = saisie.trim().toUperCase();
+const id = saisie.trim().toUpperCase();
 
-const supprimee = supprimerObservation(observations, id);
+const supprime = supprimerObservation(observations, id);
 if ( supprime === undefined) {
-  console.log('observation ${id} introuvable. Le carnet na pas été modifié.');
+  console.log('Observation ${id} introuvable. Le carnet na pas été modifié.');
   return;
 }
 await enregistrerJson(FICHIER_DONNEES, observations);
-console.log ('observation ${id} supprimée et le carnet enregistré.');
+console.log ('Observation ${id} supprimée et le carnet enregistré.');
 }
 
 // Choix 7 — modifier une observation.
